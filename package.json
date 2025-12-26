@@ -1,0 +1,115 @@
+{
+  "name": "vue-dev-server-monitor",
+  "displayName": "Vue Dev Server Monitor",
+  "description": "在状态栏监控Vue开发服务器状态",
+  "version": "1.0.0",
+  "publisher": "dengxuyang",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "vue",
+    "development",
+    "server",
+    "monitor",
+    "status"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:vueStatus.openBrowser",
+    "onCommand:vueStatus.checkNow",
+    "onCommand:vueStatus.setPort",
+    "onCommand:vueStatus.autoDetectPort",
+    "onCommand:vueStatus.showLogs"
+  ],
+  "main": "./extension.js",
+  "icon": "icon.png",
+  "contributes": {
+    "configuration": {
+      "title": "Vue Dev Server Monitor",
+      "properties": {
+        "vueStatus.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用Vue服务器状态监控"
+        },
+        "vueStatus.updateInterval": {
+          "type": "number",
+          "default": 3000,
+          "description": "状态检查间隔（毫秒）",
+          "minimum": 1000,
+          "maximum": 10000
+        },
+        "vueStatus.showNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "状态变化时显示通知"
+        },
+        "vueStatus.defaultPort": {
+          "type": "number",
+          "default": 5173,
+          "description": "默认开发服务器端口",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "vueStatus.autoDetectPort": {
+          "type": "boolean",
+          "default": true,
+          "description": "自动检测开发服务器端口"
+        },
+        "vueStatus.commonPorts": {
+          "type": "array",
+          "default": [3000, 8080, 5173, 8901, 3001, 8081, 4173],
+          "description": "常用端口列表（用于自动检测）",
+          "items": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 65535
+          }
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "vueStatus.openBrowser",
+        "title": "打开浏览器",
+        "category": "Vue Status"
+      },
+      {
+        "command": "vueStatus.checkNow",
+        "title": "检查服务器状态",
+        "category": "Vue Status"
+      },
+      {
+        "command": "vueStatus.setPort",
+        "title": "设置服务器端口",
+        "category": "Vue Status"
+      },
+      {
+        "command": "vueStatus.autoDetectPort",
+        "title": "自动检测端口",
+        "category": "Vue Status"
+      },
+      {
+        "command": "vueStatus.showLogs",
+        "title": "显示运行日志",
+        "category": "Vue Status"
+      }
+    ],
+    "menus": {
+      "statusBar/item": [
+        {
+          "command": "vueStatus.openBrowser",
+          "when": "status == 'ready'"
+        },
+        {
+          "command": "vueStatus.checkNow",
+          "when": "status == 'error'"
+        }
+      ]
+    }
+  }
+}
