@@ -48,26 +48,6 @@ Vue Dev Server Monitor 是一个 Visual Studio Code 扩展，用于在状态栏�
 - `Vue Status: 自动检测端口`：扫描常用端口
 - `Vue Status: 显示运行日志`：查看详细日志
 
-## 开发说明
-### 构建方法
-```bash
-# 克隆项目
-git clone https://github.com/your-username/vue-dev-server-monitor.git
-
-# 安装依赖
-npm install
-
-# 编译扩展
-npm run compile
-
-# 打包扩展
-vsce package
-```
-
-### 调试方法
-1. 在 VS Code 中打开项目
-2. 按 F5 启动调试会话
-3. 在新窗口中测试扩展功能
 
 ## 许可证
 MIT License
@@ -88,7 +68,7 @@ MIT License
 ## 联系方式
 - 作者：dengxuyang
 - 邮箱：your-email@example.com
-- GitHub：https://github.com/your-username/vue-dev-server-monitor
+- GitHub：https://github.com/dengxuyang/Vue-Dev-Server-Monitor
 
 ---
 
