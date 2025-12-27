@@ -2,7 +2,7 @@
   "name": "vue-dev-server-monitor",
   "displayName": "Vue Dev Server Monitor",
   "description": "在状态栏监控Vue开发服务器状态",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "publisher": "dengxuyang",
   "engines": {
     "vscode": "^1.60.0"
@@ -55,20 +55,12 @@
           "minimum": 1,
           "maximum": 65535
         },
-        "vueStatus.autoDetectPort": {
-          "type": "boolean",
-          "default": true,
-          "description": "自动检测开发服务器端口"
-        },
-        "vueStatus.commonPorts": {
-          "type": "array",
-          "default": [3000, 8080, 5173, 8901, 3001, 8081, 4173],
-          "description": "常用端口列表（用于自动检测）",
-          "items": {
-            "type": "number",
-            "minimum": 1,
-            "maximum": 65535
-          }
+        "vueStatus.failureThreshold": {
+          "type": "number",
+          "default": 3,
+          "description": "连续失败阈值，超过此值认为服务已停止",
+          "minimum": 1,
+          "maximum": 10
         }
       }
     },

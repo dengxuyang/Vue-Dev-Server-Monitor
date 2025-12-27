@@ -48,7 +48,6 @@ Vue Dev Server Monitor 是一个 Visual Studio Code 扩展，用于在状态栏�
 - `Vue Status: 自动检测端口`：扫描常用端口
 - `Vue Status: 显示运行日志`：查看详细日志
 
-
 ## 许可证
 MIT License
 
