@@ -89,10 +89,6 @@ function activate(context) {
       openBrowser(devServerPort);
       outputChannel.appendLine(`打开浏览器: http://localhost:${devServerPort}`);
     }),
-    vscode.commands.registerCommand("vueStatus.checkNow", () => {
-      checkDevServerStatus();
-      outputChannel.appendLine("手动触发状态检查");
-    }),
     vscode.commands.registerCommand("vueStatus.setPort", async () => {
       const portInput = await vscode.window.showInputBox({
         prompt: "输入开发服务器端口（1-65535），留空取消",

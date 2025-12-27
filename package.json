@@ -2,7 +2,7 @@
   "name": "vue-dev-server-monitor",
   "displayName": "Vue Dev Server Monitor",
   "description": "在状态栏监控Vue开发服务器状态",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "publisher": "dengxuyang",
   "engines": {
     "vscode": "^1.60.0"
